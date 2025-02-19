@@ -1,60 +1,70 @@
-# Marvel Characters React App
+# Marvel Comics Library React App
 
 ## 📌 Assignment Overview
-This project is part of **Module 11 Lesson 3: Component Lifecycle Events and Forms**. The goal is to create a **React application** that interacts with the Marvel Comics API, fetching and displaying character data dynamically while implementing lifecycle methods with `useEffect` and making HTTP requests using Axios.
+This project is part of **Module 11 Lesson 4: React Routing and Single-Page Applications**. The goal is to create a React application that implements routing functionality using React Router, allowing users to navigate between different pages while interacting with the Marvel Comics API.
 
 ## 🎯 Assignment Requirements
-### **✅ Task 1: Fetch and Display Characters**
-- Create a **CharacterList** functional component.
-- Use `useEffect` to fetch character data from the Marvel Comics API.
-- Display each character’s **name and thumbnail** in a grid format.
 
-### **✅ Task 2: Implement the Character Detail Feature**
-- Create a **CharacterDetail** functional component.
-- Implement a **click event handler** to fetch character details when clicked.
-- Display the character’s **name, description, and associated comics**.
+### **✅ Task 1: Router Setup & Installation**
+- Initialize React project with React Router
+- Configure basic routing setup in the main application file
 
-### **✅ Task 3: Integrate Components & Update UI**
-- Integrate `CharacterList` and `CharacterDetail` in the **App component**.
-- Ensure that clicking a character updates the `CharacterDetail` component dynamically.
+### **✅ Task 2: Component Creation**
+- Implement the following components:
+  - Home (Welcome page)
+  - Browse Characters (Display Marvel characters grid)
+  - Character Details (Show detailed character information)
+  - Comics (Placeholder for future comic content)
+
+### **✅ Task 3: Advanced Routing Features**
+- Create navigation links between pages using `NavLink`
+- Implement dynamic routing for character details
+- Add error handling with a NotFound component
+- Style active navigation links
 
 ## 🛠️ Technologies Used
-- **React** (Functional Components, Hooks, Lifecycle with `useEffect`)
-- **Axios** (Fetching API Data)
+- **React**
+- **React Router v6**
+- **Axios**
 - **Marvel Comics API**
 
 ## 📂 Project Structure
 ```
 /src
   ├── /components
-  │   ├── CharacterList.jsx   # Displays Marvel characters
-  │   ├── CharacterDetail.jsx  # Shows character details when clicked
-  ├── App.jsx   # Main application component
-  ├── index.js  # React entry point
-  ├── App.css   # Styles
+  │   ├── Home.jsx           # Welcome page
+  │   ├── CharacterList.jsx  # Displays Marvel characters
+  │   ├── CharacterDetail.jsx # Shows character details
+  │   ├── Comics.jsx         # Comics page
+  │   ├── NotFound.jsx       # 404 error page
+  ├── App.jsx                # Main routing setup
+  ├── main.jsx              # React entry point
+  ├── App.css               # Styles
 ```
 
 ## 🔑 Setup & Installation
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/ladydanicorn/marvel-react-app.git
-   cd marvel-react-app
+   git clone [your-repository-url]
+   cd [your-project-name]
    ```
+
 2. **Install dependencies:**
    ```sh
    npm install
+   npm install react-router-dom
    ```
+
 3. **Set up your Marvel API keys:**
    - Create a `.env` file in the project root and add:
      ```sh
-     REACT_APP_PUBLIC_KEY=YOUR_PUBLIC_KEY (Get from Marvel Developer Portal)
-     REACT_APP_HASH=YOUR_GENERATED_MD5_HASH (Create using 1 + PRIVATE_KEY + PUBLIC_KEY)
+     VITE_PUBLIC_KEY=YOUR_PUBLIC_KEY
+     VITE_HASH=YOUR_GENERATED_MD5_HASH
      ```
-   - **Never share your private key!**
 
 4. **Start the development server:**
    ```sh
-   npm start
+   npm run dev
    ```
 
 ## 🔗 Marvel API Configuration
@@ -65,15 +75,29 @@ This project is part of **Module 11 Lesson 3: Component Lifecycle Events and For
   ```
 
 ## 🎯 Expected Outcome
-- Successfully fetching and displaying a list of Marvel Comics characters.
-- Clicking on a character should display detailed information.
-- Smooth integration between `CharacterList` and `CharacterDetail`.
+- Functional navigation between different pages
+- Dynamic character detail routes
+- Active link highlighting
+- Error handling for undefined routes
+- Proper integration with Marvel API
 
+## 📝 Routes
+- `/` - Home page
+- `/characters` - Browse Characters page
+- `/characters/:characterId` - Character Details page
+- `/comics` - Comics page
+- `*` - NotFound page (404 error)
 
 ## 📜 License
 This project is for educational purposes and follows Marvel's API usage guidelines.
 
 ---
+```
 
-
-
+This updated README now:
+- Reflects the routing-focused requirements
+- Includes React Router in technologies
+- Lists all required routes
+- Adds route-specific components to the project structure
+- Updates the installation instructions to include React Router
+- Specifies the routing-related expected outcomes

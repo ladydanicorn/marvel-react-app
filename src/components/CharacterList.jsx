@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const PUBLIC_KEY = "948344935bb9d66fedccb960447d120e";
 const HASH = "4f93b252954df016d20c5552cdc10391";
@@ -15,6 +16,7 @@ const CharacterList = ({ onSelectCharacter }) => {
     axios
       .get(API_URL)
       .then((response) => {
+        console.log("API Response:", response.data);
         setCharacters(response.data.data.results);
         setLoading(false);
       })
